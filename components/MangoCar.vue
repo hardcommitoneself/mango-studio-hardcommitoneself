@@ -10,10 +10,10 @@
       </div>
 
       <!-- car image -->
-      <MangoCarImage :src="car.pictureURL" />
+      <mango-car-image :src="car.pictureURL" />
 
       <!-- car detail -->
-      <MangoCarDetail
+      <mango-car-detail
         :transmissionAuto="car.transmissionAuto"
         :passengerCount="car.passengerCount"
         :driveType="car.driveType"
@@ -23,7 +23,7 @@
     </div>
 
     <!-- right side -->
-    <MangoBookingCard />
+    <mango-booking-card />
   </div>
 </template>
 

@@ -7,7 +7,7 @@
 
     <!-- content - car list -->
     <div class="flex flex-col gap-6">
-      <MangoCar v-for="car of cars" :key="car.id" :car="car" />
+      <mango-car v-for="car of cars" :key="car.id" :car="car" />
     </div>
   </div>
 </template>

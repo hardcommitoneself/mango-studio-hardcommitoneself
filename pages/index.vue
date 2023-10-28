@@ -1,12 +1,11 @@
 <template>
   <div class="flex flex-col space-y-12">
-    <MangoCategory
+    <mango-category
       v-for="(carsInCategory, category) in carsByCategory"
       :key="category"
       :category="category"
       :cars="carsInCategory"
-    >
-    </MangoCategory>
+    />
   </div>
 </template>
 

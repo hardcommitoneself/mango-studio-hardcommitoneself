@@ -12,10 +12,10 @@
     </div>
 
     <div class="flex flex-col gap-2 md:gap-5">
-      <CoreButton>Book now</CoreButton>
+      <core-button>Book now</core-button>
 
       <div class="flex items-center space-x-2">
-        <CoreIcon name="light.svg" />
+        <core-icon name="light.svg" />
         <span class="text-xs md:text-xs">Immediate confirmation</span>
       </div>
     </div>

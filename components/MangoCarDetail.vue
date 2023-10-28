@@ -11,7 +11,7 @@
       <div class="flex flex-col md:flex-row gap-2.5 md:gap-6 md:items-center">
         <!-- manual -->
         <div class="flex space-x-2 items-center">
-          <CoreIcon name="transmission.svg" />
+          <core-icon name="transmission.svg" />
           <span class="text-gray-700 text-xs md:text-base">{{
             transmissionAuto ? 'Auto' : 'Manual'
           }}</span>
@@ -19,7 +19,7 @@
 
         <!-- passengers -->
         <div class="flex space-x-2 items-center">
-          <CoreIcon name="users.svg" />
+          <core-icon name="users.svg" />
           <span class="text-gray-700 text-xs md:text-base"
             >{{ passengerCount }} Passengers</span
           >
@@ -27,7 +27,7 @@
 
         <!-- FWD -->
         <div class="flex space-x-2 items-center">
-          <CoreIcon name="caricon-wheel.svg" />
+          <core-icon name="caricon-wheel.svg" />
           <span class="text-gray-700 text-xs md:text-base">{{
             driveType
           }}</span>
@@ -35,7 +35,7 @@
 
         <!-- bags -->
         <div class="flex space-x-2 items-center">
-          <CoreIcon name="caricon-luggage.svg" />
+          <core-icon name="caricon-luggage.svg" />
           <span class="text-gray-700 text-xs md:text-base"
             >{{ baggageCount }} Bags</span
           >
@@ -49,7 +49,7 @@
           :key="index"
           class="flex items-center space-x-4"
         >
-          <CoreIcon name="checkmark.svg" />
+          <core-icon name="checkmark.svg" />
           <span class="text-gray-700 text-xs md:text-base">{{ feature }}</span>
         </div>
       </div>
@@ -58,7 +58,7 @@
     <!-- car detail -->
     <div class="flex items-center space-x-2.5">
       <span class="text-xs md:text-base font-bold">Car details</span>
-      <CoreIcon name="info.svg" />
+      <core-icon name="info.svg" />
     </div>
   </div>
 </template>
