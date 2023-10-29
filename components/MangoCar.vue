@@ -19,6 +19,8 @@
         :driveType="car.driveType"
         :baggageCount="car.baggageCount"
         :features="car.features"
+        :displayName="car.displayName"
+        :model="car.model"
       />
     </div>
 
