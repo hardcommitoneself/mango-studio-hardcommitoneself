@@ -12,7 +12,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import type { Car, CarsByCategory } from 'types'
-import { v4 as uuidv4 } from 'uuid'
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -28,7 +27,7 @@ export default Vue.extend({
       const carsByCategory: CarsByCategory = {}
 
       for (const car of this.cars) {
-        const category = car.categoryType
+        const category = car.vehicleCategory
 
         if (!carsByCategory[category]) {
           carsByCategory[category] = []
@@ -42,21 +41,14 @@ export default Vue.extend({
   },
   async fetch() {
     const response = await fetch(
-      `${process.env.apiUrl}/car-info/${process.env.apiKey}`
+      `${process.env.apiUrl}/rates/${process.env.apiKey}?currency=EUR&driverAge=21&pickupDate=2023-10-30T19:00:00&pickupDeskCode=brimb1&returnDate=2023-11-01T19:00:00&returnDeskCode=brimb1&sourceCountry=IS&promoCode=&apiKey=&partnerCode=`
     )
 
     const responseJson = (await response.json()) as {
-      options: { [key: string]: Car[] }
+      rates: { [key: string]: Car[] }
     }
 
-    this.cars = ([] as Car[])
-      .concat(...Object.values(responseJson.options))
-      .map((car) => {
-        return {
-          ...car,
-          id: uuidv4(),
-        }
-      })
+    this.cars = ([] as Car[]).concat(...Object.values(responseJson.rates))
   },
 })
 </script>

@@ -3,7 +3,9 @@
     <!-- model & display name -->
     <div class="md:flex flex-col hidden">
       <h3 class="text-2xl font-bold">{{ displayName }}</h3>
-      <span class="text-sm text-gray-500">{{ model }}</span>
+      <span class="text-sm text-gray-500"
+        >{{ this.vehicleCategorys[vehicleCategory] }} or similar</span
+      >
     </div>
 
     <div class="flex justify-between md:justify-normal md:flex-col gap-8">
@@ -43,7 +45,9 @@
       </div>
 
       <!-- features -->
-      <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+      <div
+        class="flex flex-wrap flex-col md:flex-row md:items-center gap-2 md:gap-8"
+      >
         <div
           v-for="(feature, index) of features"
           :key="index"
@@ -65,6 +69,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { vehicleCategorys } from '~/utils/constant'
+
 export default Vue.extend({
   name: 'MangoCarDetailComponent',
   props: [
@@ -74,7 +80,12 @@ export default Vue.extend({
     'baggageCount',
     'features',
     'displayName',
-    'model',
+    'vehicleCategory',
   ],
+  data() {
+    return {
+      vehicleCategorys,
+    }
+  },
 })
 </script>

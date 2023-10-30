@@ -1,21 +1,57 @@
+export type Currency = 'EUR' | 'USD'
+
+export type InclusiveItem = {
+  otaCode: number
+  groupType: string
+}
+
+export type MandatoryItem = {
+  otaCode: number
+  groupType: string
+  price: number
+  currency: Currency
+}
+
+export type Excesses = {
+  amount: number
+  currency: Currency
+  deposit: number
+}
+
 export type Car = {
-  id: string
   model: string
-  displayName: string
   acrissCode: string
-  passengerCount: number
-  doorCount: number
-  pictureURL: string
-  baggageCount: number
-  categoryType: string
-  vehicleType: string
+  rateStatus: string
+  vehicleCategory: string
   transmissionAuto: boolean
-  driveType: string
-  fuelType: string
+  doorCount: number
+  passengerCount: number
+  baggageCount: number
   airConditioning: boolean
+  driveType: string
+  inclusiveItems: InclusiveItem[]
+  mandatoryItems: MandatoryItem[]
+  excesses: Excesses[]
+  rentalDays: number
+  rateQuoteId: string
+  pictureURL: string
+  currency: Currency
+  estimatedTotalAmount: number
+  rateTotalAmount: string
+  mileagePolicy: {
+    mileageTypeUnlimited: boolean
+    mileageQuantity: string
+    mileageUnitType: string
+    mileageUnitPeriodType: string
+  }
+  fuelPolicy: string
+  displayName: string
+  promoCode: string
   features: string[]
-  guaranteedModel: boolean
-  defaultModel: boolean
+  isGuaranteedModel: boolean
+  isDefaultModel: boolean
+  vehicleId: number
+  productCode: string
 }
 
 export type CarsByCategory = {

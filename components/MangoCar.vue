@@ -5,8 +5,10 @@
     <!-- left side -->
     <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-5">
       <div class="md:hidden flex-col flex">
-        <h3 class="font-bold">Ford Fiesta Manual</h3>
-        <span class="text-xs text-gray-500">Economy or similar</span>
+        <h3 class="font-bold">{{ car.displayName }}</h3>
+        <span class="text-xs text-gray-500"
+          >{{ this.vehicleCategorys[car.vehicleCategory] }} or similar</span
+        >
       </div>
 
       <!-- car image -->
@@ -20,19 +22,30 @@
         :baggageCount="car.baggageCount"
         :features="car.features"
         :displayName="car.displayName"
-        :model="car.model"
+        :vehicleCategory="car.vehicleCategory"
       />
     </div>
 
     <!-- right side -->
-    <mango-booking-card />
+    <mango-booking-card
+      :currency="car.currency"
+      :rentalDays="car.rentalDays"
+      :rateTotalAmount="car.rateTotalAmount"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { vehicleCategorys } from '~/utils/constant'
+
 export default Vue.extend({
   name: 'MangoCarComponent',
   props: ['car'],
+  data() {
+    return {
+      vehicleCategorys,
+    }
+  },
 })
 </script>
